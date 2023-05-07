@@ -10,7 +10,7 @@ public class ConnectionDB {
         Connection connection = null;
 
         try {
-            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/skypro","postgres","7andreyru@Skypro_");
+            connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/skypro", "postgres", "7andreyru@Skypro_");
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }

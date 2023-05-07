@@ -13,9 +13,9 @@ import java.util.List;
 public class CityDao implements Dao<City>{
     @Override
     public City get(long id) {
-        ResultSet set;
-        try(Connection connection = ConnectionDB.getConnection()) {
 
+        try(Connection connection = ConnectionDB.getConnection()) {
+            ResultSet set;
             PreparedStatement preparedStatement = connection.prepareStatement("select * from public.city where city_id=?");
             preparedStatement.setLong(1,id);
             set = preparedStatement.executeQuery();
@@ -33,9 +33,9 @@ public class CityDao implements Dao<City>{
 
     @Override
     public List<City> getAll() {
-        ResultSet set;
-        try(Connection connection = ConnectionDB.getConnection()) {
 
+        try(Connection connection = ConnectionDB.getConnection()) {
+            ResultSet set;
             PreparedStatement preparedStatement = connection.prepareStatement("select * from public.city");
             set = preparedStatement.executeQuery();
             List<City> cities = new ArrayList<>();
